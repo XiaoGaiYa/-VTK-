@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>images/back.ico</file>
+        <file>images/background.jpg</file>
+        <file>images/background.png</file>
+        <file>images/btn_n_1.png</file>
+        <file>images/btn_n_2.png</file>
+        <file>images/btn_n_3.png</file>
+        <file>images/btn_p_1.png</file>
+        <file>images/btn_p_2.png</file>
+        <file>images/btn_p_3.png</file>
+        <file>images/Exit.ico</file>
+        <file>images/fourImage.ico</file>
+        <file>images/fullScreen.ico</file>
+        <file>images/Loader.gif</file>
+        <file>images/logo.ico</file>
+        <file>images/Open.ico</file>
+        <file>images/start.ico</file>
+        <file>images/test.png</file>
+        <file>images/0.png</file>
+        <file>images/1.png</file>
+        <file>images/2.png</file>
+        <file>images/3.png</file>
+        <file>images/3d_icon.png</file>
+        <file>images/4.png</file>
+        <file>images/icon_file.png</file>
+        <file>images/icon_folder.png</file>
+        <file>images/mpr_icon.png</file>
+        <file>images/改变发型.png</file>
+        <file>images/滤波.png</file>
+        <file>images/info.png</file>
+        <file>images/保存.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>qss/scroll2d.qss</file>
+    </qresource>
+</RCC>

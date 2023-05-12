@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FilterSetting</class>
+ <widget class="QWidget" name="FilterSetting">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>335</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>滤波器参数设置</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/logo.ico</normaloff>images/logo.ico</iconset>
+  </property>
+  <widget class="QTabWidget" name="FilterTab">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>335</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="usesScrollButtons">
+    <bool>false</bool>
+   </property>
+   <property name="tabsClosable">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="setting_gaussion">
+    <attribute name="title">
+     <string>高斯滤波器</string>
+    </attribute>
+    <widget class="QLabel" name="lab_sigma">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>120</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>标准差(0.5-10.0)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_kernelsize">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>80</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>卷积核大小:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cbox_kernelsize">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>80</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <item>
+      <property name="text">
+       <string>3x3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5x5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>7x7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9x9</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="ledit_sigma">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>30</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_gaussion">
+     <property name="geometry">
+      <rect>
+       <x>125</x>
+       <y>135</y>
+       <width>75</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>确定</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="setting_midvalue">
+    <attribute name="title">
+     <string>中值滤波器</string>
+    </attribute>
+    <widget class="QLabel" name="lab_kernelsize_mid">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>60</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>卷积核大小:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cbox_kernelsize_mid">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>60</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <item>
+      <property name="text">
+       <string>3x3</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5x5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>7x7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9x9</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="btn_midvalue">
+     <property name="geometry">
+      <rect>
+       <x>125</x>
+       <y>135</y>
+       <width>75</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>确定</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="setting_bilateral">
+    <attribute name="title">
+     <string>双边滤波器</string>
+    </attribute>
+    <widget class="QLineEdit" name="ledit_iterations">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>60</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>5</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_iterations">
+     <property name="geometry">
+      <rect>
+       <x>45</x>
+       <y>60</y>
+       <width>150</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>迭代次数(5-10)</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_diffusion_threshold">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>100</y>
+       <width>160</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>扩散阈值(0.1-10.0)</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="ledit_diffusion_threshold">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>100</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>0.5</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_bilateral">
+     <property name="geometry">
+      <rect>
+       <x>125</x>
+       <y>135</y>
+       <width>75</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>确定</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="ledit_sigma_bilateral">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>20</y>
+       <width>80</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_sigma_bilateral">
+     <property name="geometry">
+      <rect>
+       <x>42</x>
+       <y>20</y>
+       <width>120</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>标准差(0.5-10.0)</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

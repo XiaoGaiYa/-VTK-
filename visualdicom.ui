@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VisualDicomClass</class>
+ <widget class="QMainWindow" name="VisualDicomClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1005</width>
+    <height>905</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1005</width>
+    <height>900</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>VisualDicom</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="visualdicom.qrc">
+    <normaloff>:/image/images/logo.ico</normaloff>:/image/images/logo.ico</iconset>
+  </property>
+  <widget class="QWidget" name="central_widget">
+   <widget class="QVTKOpenGLNativeWidget" name="widget_axial" native="true">
+    <property name="geometry">
+     <rect>
+      <x>205</x>
+      <y>25</y>
+      <width>380</width>
+      <height>380</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="btn_reticle_axial">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>0</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0);
+border-color: rgba(255, 255, 255, 0);
+color: rgb(255,255,255)</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QVTKOpenGLNativeWidget" name="widget_sagittal" native="true">
+    <property name="geometry">
+     <rect>
+      <x>605</x>
+      <y>25</y>
+      <width>380</width>
+      <height>380</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="btn_reticle_sagittal">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>0</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0);
+border-color: rgba(255, 255, 255, 0);
+color: rgb(255,255,255)</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSlider" name="slider_axial">
+    <property name="geometry">
+     <rect>
+      <x>585</x>
+      <y>25</y>
+      <width>20</width>
+      <height>380</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>99</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_path">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>60</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>文件路径：</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="slider_sagittal">
+    <property name="geometry">
+     <rect>
+      <x>985</x>
+      <y>25</y>
+      <width>20</width>
+      <height>380</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>99</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QVTKOpenGLNativeWidget" name="widget_coronal" native="true">
+    <property name="geometry">
+     <rect>
+      <x>205</x>
+      <y>425</y>
+      <width>380</width>
+      <height>380</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="btn_reticle_coronal">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>0</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0);
+border-color: rgba(255, 255, 255, 0);
+color: rgb(255,255,255)</string>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QVTKOpenGLNativeWidget" name="widget_3d" native="true">
+    <property name="geometry">
+     <rect>
+      <x>605</x>
+      <y>430</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSlider" name="slider_coronal">
+    <property name="geometry">
+     <rect>
+      <x>585</x>
+      <y>430</y>
+      <width>20</width>
+      <height>375</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>99</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="edit_path">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>0</y>
+      <width>945</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QVTKOpenGLNativeWidget" name="widget_polygon_3d_" native="true">
+    <property name="geometry">
+     <rect>
+      <x>605</x>
+      <y>430</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_left" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>25</y>
+      <width>205</width>
+      <height>805</height>
+     </rect>
+    </property>
+    <widget class="QTextBrowser" name="text_info">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>75</y>
+       <width>205</width>
+       <height>730</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comb_cut">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>205</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>切割算法：阈值分割算法</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>切割算法：区域生长法</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>切割算法：包围盒裁剪</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>切割算法：矩形裁剪</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>切割算法：水平集法</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comb_filter">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>25</y>
+       <width>205</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <item>
+      <property name="text">
+       <string>滤波算法：原始数据</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>滤波算法：高斯平滑</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>滤波算法：中值滤波</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>滤波算法：双边滤波</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comb_visual_polygon">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>205</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <item>
+      <property name="text">
+       <string>绘制算法：移动立方体</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>绘制算法：剖分立方体</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>绘制算法：提取等值面</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="comb_visual_volume">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>205</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>绘制算法：光线投射算法</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>绘制算法：最大密度投影算法</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="btn_clear">
+     <property name="geometry">
+      <rect>
+       <x>156</x>
+       <y>775</y>
+       <width>50</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>清除</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_axial">
+    <property name="geometry">
+     <rect>
+      <x>205</x>
+      <y>405</y>
+      <width>400</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>横断面</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_coronal">
+    <property name="geometry">
+     <rect>
+      <x>205</x>
+      <y>805</y>
+      <width>400</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>冠状面</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_sagittal">
+    <property name="geometry">
+     <rect>
+      <x>605</x>
+      <y>405</y>
+      <width>400</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>矢状面</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1005</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menufile">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action_import"/>
+    <addaction name="action_export"/>
+    <addaction name="action_save"/>
+    <addaction name="action_info"/>
+   </widget>
+   <widget class="QMenu" name="menu_visual">
+    <property name="title">
+     <string>可视化</string>
+    </property>
+    <addaction name="action_polygon"/>
+    <addaction name="action_volume"/>
+   </widget>
+   <widget class="QMenu" name="menu_setting">
+    <property name="title">
+     <string>设置</string>
+    </property>
+    <widget class="QMenu" name="menu_cut_style">
+     <property name="title">
+      <string>裁剪风格</string>
+     </property>
+     <addaction name="action_inside"/>
+     <addaction name="action_outside"/>
+    </widget>
+    <addaction name="setting_filter"/>
+    <addaction name="menu_cut_style"/>
+    <addaction name="cut_threshold"/>
+   </widget>
+   <widget class="QMenu" name="menu_view">
+    <property name="title">
+     <string>视图</string>
+    </property>
+    <addaction name="view_sagittal"/>
+    <addaction name="view_coronal"/>
+    <addaction name="view_axial"/>
+    <addaction name="view_3d"/>
+    <addaction name="view_2x2"/>
+   </widget>
+   <addaction name="menufile"/>
+   <addaction name="menu_visual"/>
+   <addaction name="menu_view"/>
+   <addaction name="menu_setting"/>
+  </widget>
+  <widget class="QToolBar" name="toolbar">
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="tool_open"/>
+   <addaction name="tool_save"/>
+   <addaction name="tool_info"/>
+   <addaction name="tool_three"/>
+   <addaction name="tool_visual"/>
+   <addaction name="tool_cut"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">QStatusBar::item{border: 0px}</string>
+   </property>
+  </widget>
+  <action name="action_import">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/Open.ico</normaloff>:/image/images/Open.ico</iconset>
+   </property>
+   <property name="text">
+    <string>导入文件</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_export">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/back.ico</normaloff>:/image/images/back.ico</iconset>
+   </property>
+   <property name="text">
+    <string>导出切片</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/start.ico</normaloff>:/image/images/start.ico</iconset>
+   </property>
+   <property name="text">
+    <string>保存图像</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_save_as">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="action_info">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/btn_p_2.png</normaloff>:/image/images/btn_p_2.png</iconset>
+   </property>
+   <property name="text">
+    <string>文件信息</string>
+   </property>
+  </action>
+  <action name="tool_open">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/Open.ico</normaloff>:/image/images/Open.ico</iconset>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="toolTip">
+    <string>设定DICOM文件路径</string>
+   </property>
+  </action>
+  <action name="polygon_move">
+   <property name="text">
+    <string>移动立方体</string>
+   </property>
+  </action>
+  <action name="polygon_sub">
+   <property name="text">
+    <string>剖分立方体</string>
+   </property>
+  </action>
+  <action name="polygon_contour">
+   <property name="text">
+    <string>提取等值面</string>
+   </property>
+  </action>
+  <action name="volume_raycast">
+   <property name="text">
+    <string>光线投射算法</string>
+   </property>
+  </action>
+  <action name="volume_max">
+   <property name="text">
+    <string>最大密度投影算法</string>
+   </property>
+  </action>
+  <action name="filter_gaussion">
+   <property name="text">
+    <string>高斯平滑</string>
+   </property>
+  </action>
+  <action name="filter_midvalue">
+   <property name="text">
+    <string>中值滤波</string>
+   </property>
+  </action>
+  <action name="filter_bilateral">
+   <property name="text">
+    <string>双边滤波</string>
+   </property>
+  </action>
+  <action name="filter_mean">
+   <property name="text">
+    <string>均值滤波</string>
+   </property>
+  </action>
+  <action name="view_sagittal">
+   <property name="text">
+    <string>矢状面</string>
+   </property>
+  </action>
+  <action name="view_coronal">
+   <property name="text">
+    <string>冠状面</string>
+   </property>
+  </action>
+  <action name="view_axial">
+   <property name="text">
+    <string>横断面</string>
+   </property>
+  </action>
+  <action name="view_3d">
+   <property name="text">
+    <string>三维图像</string>
+   </property>
+  </action>
+  <action name="view_2x2">
+   <property name="text">
+    <string>四视图</string>
+   </property>
+  </action>
+  <action name="tool_visual">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/3d_icon.png</normaloff>:/image/images/3d_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="toolTip">
+    <string>三维重建</string>
+   </property>
+  </action>
+  <action name="cut_binarization">
+   <property name="text">
+    <string>基于阈值的二值化方法</string>
+   </property>
+  </action>
+  <action name="cut_region_growth">
+   <property name="text">
+    <string>区域生长法</string>
+   </property>
+  </action>
+  <action name="cut_horizontal_set">
+   <property name="text">
+    <string>水平集法</string>
+   </property>
+  </action>
+  <action name="cut_interval_segmentation">
+   <property name="text">
+    <string>区间分割法</string>
+   </property>
+  </action>
+  <action name="cut_cnn">
+   <property name="text">
+    <string>卷积神经网络</string>
+   </property>
+  </action>
+  <action name="setting_filter">
+   <property name="text">
+    <string>滤波器参数</string>
+   </property>
+  </action>
+  <action name="tool_three">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/mpr_icon.png</normaloff>:/image/images/mpr_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="toolTip">
+    <string>切片视图</string>
+   </property>
+  </action>
+  <action name="tool_info">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/info.png</normaloff>:/image/images/info.png</iconset>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="toolTip">
+    <string>文件信息</string>
+   </property>
+  </action>
+  <action name="tool_cut">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/改变发型.png</normaloff>:/image/images/改变发型.png</iconset>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="toolTip">
+    <string>切割</string>
+   </property>
+  </action>
+  <action name="action_polygon">
+   <property name="text">
+    <string>面绘制</string>
+   </property>
+  </action>
+  <action name="action_volume">
+   <property name="text">
+    <string>体绘制</string>
+   </property>
+  </action>
+  <action name="tool_save">
+   <property name="icon">
+    <iconset resource="visualdicom.qrc">
+     <normaloff>:/image/images/保存.png</normaloff>:/image/images/保存.png</iconset>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="toolTip">
+    <string>保存</string>
+   </property>
+  </action>
+  <action name="action_inside">
+   <property name="text">
+    <string>保留圈内部分</string>
+   </property>
+  </action>
+  <action name="action_outside">
+   <property name="text">
+    <string>保留圈外部分</string>
+   </property>
+  </action>
+  <action name="cut_threshold">
+   <property name="text">
+    <string>分割阈值</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKOpenGLNativeWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKOpenGLNativeWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="visualdicom.qrc"/>
+ </resources>
+ <connections/>
+</ui>
