@@ -51,7 +51,7 @@ public:
     enum PolygonMethod { kCubeMove = 0 , kCubeSubdivision , kContourFilter };
     enum VolumeMethod { kRaycast = kVolume , kMaximumDensityProjection };
     enum FilterMethod { kNull , kGaussian, kMidValue , kBilateral };
-    enum CutMethod { kThreshold , kRegionalGrowth, kBoxWidget , kDrawline };
+    enum CutMethod { kThreshold , kBoxWidget , kDrawline };     //, kRegionalGrowth
     enum ViewIdx { kAxial , kSagittal , kCoronal , k3D , kViewNum };
     VisualDicom(QWidget *parent = nullptr); 
     ~VisualDicom();

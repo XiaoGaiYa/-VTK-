@@ -269,22 +269,12 @@ color: rgb(255,255,255)</string>
      </item>
      <item>
       <property name="text">
-       <string>切割算法：区域生长法</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
        <string>切割算法：包围盒裁剪</string>
       </property>
      </item>
      <item>
       <property name="text">
        <string>切割算法：矩形裁剪</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>切割算法：水平集法</string>
       </property>
      </item>
     </widget>

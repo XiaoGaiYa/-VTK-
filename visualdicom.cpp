@@ -107,6 +107,8 @@ void VisualDicom::resizeEvent(QResizeEvent * event)
 
     ui.widget_3d->resize(nw, nh);
     ui.widget_3d->move(nw + 205, nh + 30);
+    ui.widget_polygon_3d_->resize(nw, nh);
+    ui.widget_polygon_3d_->move(nw + 205, nh + 30);
 
     //for (int i = 0; i < kViewNum; i++)
     //{
@@ -268,7 +270,7 @@ void VisualDicom::Cutting()
     switch (idx)
     {
         case kThreshold: ThresholdCut(); break;
-        case kRegionalGrowth: RegionalGrowthCut(); break;
+        //case kRegionalGrowth: RegionalGrowthCut(); break;
         case kBoxWidget: BoxWidgetCut(); break;
         case kDrawline: DrawlineCut(); break;
         default: break;
@@ -289,15 +291,16 @@ void VisualDicom::SetViewVisible(bool flag)
     ui.slider_coronal->setVisible(flag);
     ui.label_coronal->setVisible(flag);
 
-    ui.widget_3d->setVisible(flag);
-    ui.widget_polygon_3d_->setVisible(flag);
+    ui.widget_3d->setVisible(flag && type_ == kVolume);
+    ui.widget_polygon_3d_->setVisible(flag && type_ == kPolygon);
 }
 
 void VisualDicom::FourView()
 {
     printf("FourView trigged\n");
     this->SetViewVisible(true);
-    this->resize(width(), height());
+    this->resize(width() + 1, height() + 1);
+    this->resize(width() - 1, height() - 1);
 }
 
 void VisualDicom::SingleView(ViewIdx idx)
@@ -350,10 +353,15 @@ void VisualDicom::SingleView(ViewIdx idx)
         }
         case VisualDicom::k3D: 
         {
-            QVTKOpenGLNativeWidget* widget = this->type_ == kVolume ? ui.widget_3d : ui.widget_polygon_3d_;
-            widget->resize(w + 20, h + 20);
-            widget->move(x, y);
-            widget->setVisible(true);
+            //QVTKOpenGLNativeWidget* widget = this->type_ == kVolume ? ui.widget_3d : ui.widget_polygon_3d_;
+            ui.widget_3d->resize(w + 20, h + 20);
+            ui.widget_3d->move(x, y);
+            //ui.widget_3d->setVisible(this->type_ == kVolume);
+
+            ui.widget_polygon_3d_->resize(w + 20, h + 20);
+            ui.widget_polygon_3d_->move(x, y);
+            //ui.widget_polygon_3d_->setVisible(this->type_ != kVolume);
+            this->type_ == kVolume ? ui.widget_3d->setVisible(true) : ui.widget_polygon_3d_->setVisible(true);
             break;
         }
         case VisualDicom::kViewNum: 
